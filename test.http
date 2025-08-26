@@ -1,0 +1,39 @@
+// VS Code REST Client sample
+
+### Signup
+POST http://127.0.0.1:8000/auth/signup
+Content-Type: application/json
+
+{
+  "username": "alice",
+  "email": "alice@example.com",
+  "full_name": "Alice Tester",
+  "password": "secret123"
+}
+
+### Login
+POST http://127.0.0.1:8000/auth/login
+Content-Type: application/x-www-form-urlencoded
+
+username=alice&password=secret123
+
+### Me
+GET http://127.0.0.1:8000/auth/me
+Authorization: Bearer {{token}}
+
+### Create Student
+POST http://127.0.0.1:8000/students/
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "first_name": "John",
+  "last_name": "Doe",
+  "index_number": "STU-001",
+  "program": "Computer Science",
+  "level": 200
+}
+
+### List My Students
+GET http://127.0.0.1:8000/students/
+Authorization: Bearer {{token}}
